@@ -1,0 +1,252 @@
+.slider-content p {
+  margin-top: 20px;
+}
+.header-logo {
+  width: 140px
+}
+.slider-content {
+  margin-top: -220px !important
+}
+.footer-widget .widget-logo img {
+  width: 120px
+}
+.aboutus-top {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+.ma3an-title {
+  margin-bottom: 60px
+}
+.aboutus-content p {
+  line-height: 2.4
+}
+.about-note {
+  border: 1px solid #D3D3D3;
+  background: #c8c8c814;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem
+}
+.donate-conditions {
+  margin-top: 4rem;
+  margin-bottom: 2rem
+}
+.page-banner {
+  height: 450px
+}
+.note {
+  text-align: right;
+  background-color: #fff9e2;
+  border: 1px solid #ffc107;
+}
+.register-login-form .single-form .btn {
+    
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+	line-height: 2.8;
+    padding: 0 2.188rem;
+	
+}
+.header-menu ul li.active > a {
+    color: #2DCDCB;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #2DCDCB;
+    border-color: #2DCDCB;
+}
+.slider-rating-box .box-rating .count {
+    font-size: 30px;
+    font-weight: 500;
+    color: #2DCDCB;
+}
+.slider-courses-box .box-content {
+   
+    background-color: #ffb764;
+   
+}
+.courses-tabs-menu {
+    background-color: #2DCDCB;
+  
+}
+.section-title .main-title span {
+    color: #2DCDCB;
+  
+}
+.courses-search button {
+   
+    background-color: #eef0f2;
+  
+    color: #14c3c1;
+}
+
+.courses-tabs-menu .nav li button.active, .courses-tabs-menu .nav li button:hover {
+    border-color: #2DCDCB;
+    color: #2DCDCB;
+}
+.courses-tabs-menu .nav li button {
+   
+    border: 1px solid #29cdcb57;
+  
+}
+.shape-icon-box .box-content .box-wrapper {
+	background-color: #2DCDCB;}
+.register-login-images {
+	background-color: #eef1f3;}
+
+/*------------------ New Theme colors ------------------------*/
+.slider-section {
+	background-color: #dde2e6;}
+
+.header-main-wrapper {border: 2px solid #c3bfd6;background:#fff}
+
+.footer-section {
+    background-color: #dde2e6;
+}
+.slider-section-page {
+	background-color: #dde2e6;}
+.student-box {
+   
+    background-color: #edf0f2;
+}
+.student-box .count {
+   
+    color: #29cdcb;
+}
+.page-banner {
+   
+	background-color: #dde2e6;}
+
+
+
+.single-courses .courses-content .courses-author .tag a {
+   
+    background-color: #29cdcb;
+   
+    color: #ffffff;
+   
+}
+
+.single-courses .courses-content .courses-author .tag a:hover{
+                        background-color:#FE950C;
+                        color:#fff
+                    }
+.courses-btn .btn {
+    border: 1px solid #29cdcb;
+    /* line-height: 58px; */
+}
+.btn-secondary {
+    color: #29cdcb!important;
+    background-color: #fff;
+    border-color: #29cdcb;
+}
+
+.btn-secondary {
+    color: #29cdcb!important;
+}
+.register-login-form .single-form .btn.btn-outline {
+    border: 1px solid #29cdcb;
+   
+}
+.register-login-wrapper {
+    padding: 70px;
+    padding-top: 20px;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 575px) {
+    .register-login-wrapper {
+        padding: 30px;
+    }
+}
+
+.register-login-images {
+    background-color: #e7f8ee;
+    padding: 45px 40px 0;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+/*Mobile View*/
+@media only screen and (max-width: 575px) {
+  .slider-content p {
+    margin-top: 146px;
+  }
+  .slider-rating-box {
+    display: none
+  }
+  .donate-conditions {
+    margin-top: 2rem;
+    margin-bottom: 2rem
+  }
+	.newest-select .nice-select {
+    float: none;
+    display: inline-block;
+    padding: 0 40px 0 20px;
+    height: 50px;
+    line-height: 48px;
+    border-radius: 10px;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    font-weight: 500;
+    font-size: 15px;
+    color: #212832;
+    text-align: right !important;
+    width: 246px;
+}
+	.register-login-form .single-form .btn {
+   
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    line-height: 2.8;
+    padding: 8px 0.8rem;
+    color: #fff;
+    height: 58px;
+		color:#fff!important
+}
+}
+.social-button {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    padding: 0 1.8em;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 0 #1273eb;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 44px;
+    cursor: pointer;
+    border: 0px;
+}
+
+.auth__social .button {
+    -ms-flex: 1;
+    flex: 1;
+    margin: 5px 5px;
+    padding: 0 2em;
+}
+
+.button--facebook.button--flat {
+    box-shadow: inset 0 0 0 100px #3b5998;
+}
+
+.button--google.button--flat {
+    box-shadow: inset 0 0 0 100px #dd4b39;
+    padding: 0px 2.6em
+}
+
+.fab {
+    display: contents !important;
+}
+
+.auth__social span {
+    padding-left: 8px
+}

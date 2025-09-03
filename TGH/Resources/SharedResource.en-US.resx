@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDRESS_AMMAN" xml:space="preserve">
+    <value>Amman - Jordan</value>
+  </data>
+  <data name="ALL" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="BTN_FORGOT" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+  <data name="CHARITIES_ALL" xml:space="preserve">
+    <value>All Charities</value>
+  </data>
+  <data name="CHARITIES_ALL_DESCRIPTION" xml:space="preserve">
+    <value>A list of all participating charities</value>
+  </data>
+  <data name="CHARITIES_COUNT" xml:space="preserve">
+    <value>Number of Charities</value>
+  </data>
+  <data name="CHAT_CONVERSATIONS" xml:space="preserve">
+    <value>Conversations</value>
+  </data>
+  <data name="CHAT_DELETE_CONFIRM" xml:space="preserve">
+    <value>Are you sure you want to delete this message?</value>
+  </data>
+  <data name="CHAT_ENTERMESSAGE" xml:space="preserve">
+    <value>Enter a message</value>
+  </data>
+  <data name="CHAT_NOMESSAGES" xml:space="preserve">
+    <value>No messages, Select a conversation !</value>
+  </data>
+  <data name="CHAT_PICKCONVERSATION" xml:space="preserve">
+    <value>Click a conversation !</value>
+  </data>
+  <data name="CLOSE" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CONTACT_ADDRESS" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="CONTACT_CENTER" xml:space="preserve">
+    <value>Contact Center</value>
+  </data>
+  <data name="CONTACT_EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="CONTACT_MESSAGE" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="CONTACT_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CONTACT_PHONENUMBER" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="CONTACT_SUBJECT" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="DAY" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="DAYS" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="DefaultError" xml:space="preserve">
+    <value>An unknown failure has occured</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DONATIONCONDITIONS" xml:space="preserve">
+    <value>Donation Conditions</value>
+  </data>
+  <data name="DONATION_DELETE_CONFIRM" xml:space="preserve">
+    <value>Are you sure you want to delete this Donation ?</value>
+  </data>
+  <data name="DONATION_FORM" xml:space="preserve">
+    <value>Donation Form</value>
+  </data>
+  <data name="DONATION_FORM_CATEGORY" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="DONATION_FORM_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DONATION_FORM_PICTURE" xml:space="preserve">
+    <value>Donation Picture</value>
+  </data>
+  <data name="DONATION_FORM_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="DONATION_NEW" xml:space="preserve">
+    <value>New Donation</value>
+  </data>
+  <data name="DONATION_SHOWMYNAME" xml:space="preserve">
+    <value>Show my name in donation</value>
+  </data>
+  <data name="DuplicateEmail" xml:space="preserve">
+    <value>Email '{0}' is already taken</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>Mobile Number already exists</value>
+  </data>
+  <data name="EMAIL_RESET_BODY" xml:space="preserve">
+    <value>Please reset your password by &lt;a href='{0}'&gt;clicking here&lt;/a&gt;.</value>
+  </data>
+  <data name="EMAIL_RESET_TITLE" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="ERROR_LOGGINGIN" xml:space="preserve">
+    <value>Error logging in</value>
+  </data>
+  <data name="ERROR_UPDATEFAILED" xml:space="preserve">
+    <value>Profile Update Failed</value>
+  </data>
+  <data name="FORM_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="FORM_CITY" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="FORM_CONFIRMPASSWORD" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="FORM_DELETEPICTURE" xml:space="preserve">
+    <value>Are you sure you want to delete this picture ?</value>
+  </data>
+  <data name="FORM_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="FORM_EDITPROFILE" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="FORM_EMAIL" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="FORM_FULLNAME" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="FORM_NEWPASSWORD" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="FORM_NEWPASSWORDCONFIRM" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="FORM_NOTE" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="FORM_NOTE_MESSAGE" xml:space="preserve">
+    <value>Note: All personal information is confidential and is not shared with any party. It is only for the use of the platform management to communicate between the parties, and that is done through direct text conversation through a private conversation window.</value>
+  </data>
+  <data name="FORM_OLDPASSWORD" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="FORM_PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="FORM_PERSONALINFO" xml:space="preserve">
+    <value>Personal Information</value>
+  </data>
+  <data name="FORM_PHONE" xml:space="preserve">
+    <value>Mobile Number</value>
+  </data>
+  <data name="FORM_PICTURE" xml:space="preserve">
+    <value>Profile Picture</value>
+  </data>
+  <data name="FORM_RESET" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="FORM_SAVE" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="FORM_SIGNIN" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="FORM_TYPE" xml:space="preserve">
+    <value>User Type</value>
+  </data>
+  <data name="FORM_UPLOAD" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="HOME_CHATNOW" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="HOME_DONATENOW" xml:space="preserve">
+    <value>Donate Now</value>
+  </data>
+  <data name="HOME_DONATIONS" xml:space="preserve">
+    <value>Donations</value>
+  </data>
+  <data name="HOME_MA3AN" xml:space="preserve">
+    <value>Together Platform</value>
+  </data>
+  <data name="HOME_MA3ANDESCRIPTION" xml:space="preserve">
+    <value>What exceeds your needs and is not used by you, might be a necessary need for someone else so help us put a smile on the face of an innocent child or a helpless or incapable person, you would like to surprise a friend or a relative, if you want to help a provide a student scholarship or help someone find work. This all can be found using “Together Platform”.</value>
+  </data>
+  <data name="HOME_SEARCHCITY" xml:space="preserve">
+    <value>Search Cities</value>
+  </data>
+  <data name="HOME_TEXT1" xml:space="preserve">
+    <value>Beneficiaries</value>
+  </data>
+  <data name="HOME_TEXT2_1" xml:space="preserve">
+    <value>More than</value>
+  </data>
+  <data name="HOME_TEXT2_2" xml:space="preserve">
+    <value>Donor</value>
+  </data>
+  <data name="HOME_TITLE_1" xml:space="preserve">
+    <value>التبرعات</value>
+  </data>
+  <data name="HOME_TITLE_2" xml:space="preserve">
+    <value>العينية</value>
+  </data>
+  <data name="HOUR" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="HOURS" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Email '{0}' is invalid</value>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Invalid Token or Expired</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>User name {0} is invalid, can only contain letters or digits</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="LOGIN_FORM" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="MINUTE" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="MINUTES" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="NAV_ABOUT" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="NAV_CHARITIES" xml:space="preserve">
+    <value>Charities</value>
+  </data>
+  <data name="NAV_CONTACTUS" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="NAV_CONTROLPANEL" xml:space="preserve">
+    <value>Control Panel</value>
+  </data>
+  <data name="NAV_CREATE_NEWACCOUNT" xml:space="preserve">
+    <value>Create new account</value>
+  </data>
+  <data name="NAV_FACEBOOK" xml:space="preserve">
+    <value>Login With Facebook</value>
+  </data>
+  <data name="NAV_GOOGLE" xml:space="preserve">
+    <value>Login With Google</value>
+  </data>
+  <data name="NAV_HOME" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="NAV_MYCHATS" xml:space="preserve">
+    <value>My Chats</value>
+  </data>
+  <data name="NAV_MYDONATIONS" xml:space="preserve">
+    <value>My Donations</value>
+  </data>
+  <data name="NAV_MYPROFILE" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="NAV_NEWACCOUNT" xml:space="preserve">
+    <value>New Account</value>
+  </data>
+  <data name="NAV_PASSWORD" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="NAV_REGISTER" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="NAV_SIGNIN" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="NAV_SIGNOUT" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="NAV_TWITTER" xml:space="preserve">
+    <value>Login With Twitter</value>
+  </data>
+  <data name="NOW" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Current password is incorrect</value>
+  </data>
+  <data name="PasswordRequireDigit" xml:space="preserve">
+    <value>Passwords must have at least one digit ('0'-'9')</value>
+  </data>
+  <data name="PasswordRequireLower" xml:space="preserve">
+    <value>Passwords must have at least one lowercase ('a'-'z')</value>
+  </data>
+  <data name="PasswordRequireNonLetterOrDigit" xml:space="preserve">
+    <value>Passwords must have at least one non letter or digit character</value>
+  </data>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>Passwords must have at least one non alphanumeric character</value>
+  </data>
+  <data name="PasswordRequireUpper" xml:space="preserve">
+    <value>Passwords must have at least one uppercase ('A'-'Z')</value>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>Passwords must be at least {0} characters</value>
+  </data>
+  <data name="PASSWORD_RESET_CONFIRMED" xml:space="preserve">
+    <value>An email was sent to your email, Please check your email to continue with resetting your password</value>
+  </data>
+  <data name="PASSWORD_RESET_SUCCESSFUL" xml:space="preserve">
+    <value>Your password was reset successfully, You will be redirected in </value>
+  </data>
+  <data name="SEND" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="STAY_IN_CONTACT_1" xml:space="preserve">
+    <value>Stay in touch</value>
+  </data>
+  <data name="STAY_IN_CONTACT_2" xml:space="preserve">
+    <value>with us</value>
+  </data>
+  <data name="TITLE_ABOUT_1" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="TITLE_ABOUT_2" xml:space="preserve">
+    <value>Ma3an</value>
+  </data>
+  <data name="TITLE_CHARITIES_1" xml:space="preserve">
+    <value>Charity</value>
+  </data>
+  <data name="TITLE_CHARITIES_2" xml:space="preserve">
+    <value>Organizations</value>
+  </data>
+  <data name="TITLE_CONTACT_1" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="TITLE_CONTACT_2" xml:space="preserve">
+    <value>Us</value>
+  </data>
+  <data name="TITLE_DONATIONS_1" xml:space="preserve">
+    <value>Charity</value>
+  </data>
+  <data name="TITLE_DONATIONS_2" xml:space="preserve">
+    <value>Donations</value>
+  </data>
+  <data name="UserNameNotFound" xml:space="preserve">
+    <value>User {0} does not exist</value>
+  </data>
+  <data name="USER_INACTIVE" xml:space="preserve">
+    <value>This user was deactivated, Please contact the administration</value>
+  </data>
+  <data name="VALIATION_DESCRIPTION_REGEX" xml:space="preserve">
+    <value>{0} must be more than {2} and less than {1} characters long</value>
+  </data>
+  <data name="VALIDATION_CATEGORY_REQUIRED" xml:space="preserve">
+    <value>Category is required</value>
+  </data>
+  <data name="VALIDATION_CITY_REQUIRED" xml:space="preserve">
+    <value>City is Required</value>
+  </data>
+  <data name="VALIDATION_CONFIRMPASSWORD_REQUIRED" xml:space="preserve">
+    <value>Confirm password not matching password</value>
+  </data>
+  <data name="VALIDATION_DESCRIPTION_REQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_EMAIL_REQUIRED" xml:space="preserve">
+    <value>Email Address is required</value>
+  </data>
+  <data name="VALIDATION_FULLNAME_REQUIRED" xml:space="preserve">
+    <value>Full Name is Required</value>
+  </data>
+  <data name="VALIDATION_NEWPASSWORD_REQUIRED" xml:space="preserve">
+    <value>New password is required</value>
+  </data>
+  <data name="VALIDATION_OLDPASSWORD_REQUIRED" xml:space="preserve">
+    <value>Current password is required</value>
+  </data>
+  <data name="VALIDATION_PASSWORD_REGEX" xml:space="preserve">
+    <value>Password must contain letters, Symbols and Numbers</value>
+  </data>
+  <data name="VALIDATION_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Password is required</value>
+  </data>
+  <data name="VALIDATION_PHONE_REQUIRED" xml:space="preserve">
+    <value>Mobile number is required</value>
+  </data>
+  <data name="VALIDATION_REGEX" xml:space="preserve">
+    <value>{0} must be more than {2} and less than {1} characters long</value>
+  </data>
+  <data name="VALIDATION_REGEX_EMAIL" xml:space="preserve">
+    <value>Incorrect Email Address</value>
+  </data>
+  <data name="VALIDATION_REGEX_PHONENUMBER" xml:space="preserve">
+    <value>Please enter a correct phone number</value>
+  </data>
+  <data name="VALIDATION_TITLE_REGEX" xml:space="preserve">
+    <value>{0} must be more than {2} and less than {1} characters long</value>
+  </data>
+  <data name="VALIDATION_TITLE_REQUIRED" xml:space="preserve">
+    <value>Title is Required</value>
+  </data>
+  <data name="VALIDATION_TYPE_REQUIRED" xml:space="preserve">
+    <value>Type is Required</value>
+  </data>
+</root>

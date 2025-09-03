@@ -1,0 +1,91 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<TGH.Models.ApplicationUser> SignInManager
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ma3an</title>
+    
+
+    <!-- CSS
+    ============================================ -->
+    @*Icon Font CSS*@
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/icofont.min.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/flaticon.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/font-awesome.min.css">
+    <link rel="stylesheet" href="~/maan/assets/fontawesome/css/all.min.css" />
+    @* Plugins CSS*@
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/apexcharts.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/jqvmap.min.css">
+    @* Main Style CSS*@
+    @if (CultureInfo.CurrentUICulture.Name == "ar")
+    {
+        <link rel="stylesheet" href="~/maan/assets/css/style.css">
+        <link rel="stylesheet" href="~/maan/assets/css/ma3an.css">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/maan/assets/css/en-US-style.css">
+        <link rel="stylesheet" href="~/maan/assets/css/en-US-ma3an.css">
+    }
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/page.css">
+    <link rel="stylesheet" href="~/maan/assets/css/plugins/font-awesome.min.css">
+    <link rel="stylesheet" href="~/maan/assets/css/AdminStyles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a  asp-area="Admin" asp-controller="Categories" asp-action="Index"><img  style="width:80px" src="~/maan/assets/images/AdminLog.svg" alt="Shape"></a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 admin-nav">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Categories" asp-action="Index">Categories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Cities" asp-action="Index">Cities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Donations" asp-action="Index">Donations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a>
+                            </li>
+                        }
+
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

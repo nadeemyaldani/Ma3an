@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDRESS_AMMAN" xml:space="preserve">
+    <value>عمان - الأردن</value>
+  </data>
+  <data name="ALL" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="BTN_FORGOT" xml:space="preserve">
+    <value>نسيت كلمة السر؟</value>
+  </data>
+  <data name="CHARITIES_ALL" xml:space="preserve">
+    <value>كل الجمعيات</value>
+  </data>
+  <data name="CHARITIES_ALL_DESCRIPTION" xml:space="preserve">
+    <value>قائمة باسماء الجمعيات المشتركة في منصة معاً</value>
+  </data>
+  <data name="CHARITIES_COUNT" xml:space="preserve">
+    <value>عدد الجمعيات</value>
+  </data>
+  <data name="CHAT_CONVERSATIONS" xml:space="preserve">
+    <value>المحادثات</value>
+  </data>
+  <data name="CHAT_DELETE_CONFIRM" xml:space="preserve">
+    <value>هل أنت متأكد من حذف هذه الرسالة؟</value>
+  </data>
+  <data name="CHAT_ENTERMESSAGE" xml:space="preserve">
+    <value>أدخل رسالة</value>
+  </data>
+  <data name="CHAT_NOMESSAGES" xml:space="preserve">
+    <value>لا يوجد رسائل، اضغط على محادثة</value>
+  </data>
+  <data name="CHAT_PICKCONVERSATION" xml:space="preserve">
+    <value>اضغط على محادثة</value>
+  </data>
+  <data name="CLOSE" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="CONTACT_ADDRESS" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="CONTACT_CENTER" xml:space="preserve">
+    <value>مركز التواصل</value>
+  </data>
+  <data name="CONTACT_EMAIL" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="CONTACT_MESSAGE" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="CONTACT_NAME" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="CONTACT_PHONENUMBER" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="CONTACT_SUBJECT" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="DAY" xml:space="preserve">
+    <value>يوم</value>
+  </data>
+  <data name="DAYS" xml:space="preserve">
+    <value>أيام</value>
+  </data>
+  <data name="DefaultError" xml:space="preserve">
+    <value>حدث خطأ عام، يرجى المحاولة من جديد لاحقا</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DONATIONCONDITIONS" xml:space="preserve">
+    <value>سياسات التبرع</value>
+  </data>
+  <data name="DONATION_DELETE_CONFIRM" xml:space="preserve">
+    <value>هل أنت متأكد من حذف هذا التبرع ؟</value>
+  </data>
+  <data name="DONATION_FORM" xml:space="preserve">
+    <value>نموذج التبرع العيني</value>
+  </data>
+  <data name="DONATION_FORM_CATEGORY" xml:space="preserve">
+    <value>التصنيف</value>
+  </data>
+  <data name="DONATION_FORM_DESCRIPTION" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="DONATION_FORM_PICTURE" xml:space="preserve">
+    <value>صورة التبرع</value>
+  </data>
+  <data name="DONATION_FORM_TITLE" xml:space="preserve">
+    <value>اسم التبرع</value>
+  </data>
+  <data name="DONATION_NEW" xml:space="preserve">
+    <value>تبرع جديد</value>
+  </data>
+  <data name="DONATION_SHOWMYNAME" xml:space="preserve">
+    <value>إظهار الاسم في التبرع</value>
+  </data>
+  <data name="DuplicateEmail" xml:space="preserve">
+    <value>البريد الإلكتروني {0} مستعمل مسبقا</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>رقم الهاتف موجود مسبقا</value>
+  </data>
+  <data name="EMAIL_RESET_BODY" xml:space="preserve">
+    <value>لتغيير كلمة السر يرجى &lt;a href='{0}'&gt;الضغط هنا&lt;/a&gt;.</value>
+  </data>
+  <data name="EMAIL_RESET_TITLE" xml:space="preserve">
+    <value>تغيير كلمة السر</value>
+  </data>
+  <data name="ERROR_LOGGINGIN" xml:space="preserve">
+    <value>خطأ بتسجيل الدخول</value>
+  </data>
+  <data name="ERROR_UPDATEFAILED" xml:space="preserve">
+    <value>خطأ بتحديث الملف</value>
+  </data>
+  <data name="FORM_CANCEL" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="FORM_CITY" xml:space="preserve">
+    <value>المحافظة</value>
+  </data>
+  <data name="FORM_CONFIRMPASSWORD" xml:space="preserve">
+    <value>تأكيد كلمة السر</value>
+  </data>
+  <data name="FORM_DELETEPICTURE" xml:space="preserve">
+    <value>هل أنت متأكد من حذف الصورة؟</value>
+  </data>
+  <data name="FORM_DESCRIPTION" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="FORM_EDITPROFILE" xml:space="preserve">
+    <value>تعديل الملف</value>
+  </data>
+  <data name="FORM_EMAIL" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="FORM_FULLNAME" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="FORM_NEWPASSWORD" xml:space="preserve">
+    <value>كلمة السر الجديدة</value>
+  </data>
+  <data name="FORM_NEWPASSWORDCONFIRM" xml:space="preserve">
+    <value>تأكيد كلمة السر الجديدة</value>
+  </data>
+  <data name="FORM_NOTE" xml:space="preserve">
+    <value>تنبيه</value>
+  </data>
+  <data name="FORM_NOTE_MESSAGE" xml:space="preserve">
+    <value>جميع المعلومات الشخصية سرية ولا يتم مشاركتها مع أي جهة هي فقط لاستخدام إدارة المنصة لتواصل بين الأطراف يتم من خلال المحادثة النصية المباشرة من خلال نافذة محادثة خاصة</value>
+  </data>
+  <data name="FORM_OLDPASSWORD" xml:space="preserve">
+    <value>كلمة السر الحالية</value>
+  </data>
+  <data name="FORM_PASSWORD" xml:space="preserve">
+    <value>كلمة السر</value>
+  </data>
+  <data name="FORM_PERSONALINFO" xml:space="preserve">
+    <value>الملف الشخصي</value>
+  </data>
+  <data name="FORM_PHONE" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="FORM_PICTURE" xml:space="preserve">
+    <value>الصورة الشخصية</value>
+  </data>
+  <data name="FORM_RESET" xml:space="preserve">
+    <value>استرجاع كلمة السر</value>
+  </data>
+  <data name="FORM_SAVE" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="FORM_SIGNIN" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="FORM_TYPE" xml:space="preserve">
+    <value>نوع المستخدم</value>
+  </data>
+  <data name="FORM_UPLOAD" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="HOME_CHATNOW" xml:space="preserve">
+    <value>تواصل</value>
+  </data>
+  <data name="HOME_DONATENOW" xml:space="preserve">
+    <value>تبرع الآن</value>
+  </data>
+  <data name="HOME_DONATIONS" xml:space="preserve">
+    <value>التبرعات العينية</value>
+  </data>
+  <data name="HOME_MA3AN" xml:space="preserve">
+    <value>منصة معاً</value>
+  </data>
+  <data name="HOME_MA3ANDESCRIPTION" xml:space="preserve">
+    <value>ما قد يفيض عن حاجتك وما لم يعد ضروري لديك قد يكون حاجة ملحة او ضرورية لشخص اخر
+                وترسم ابتسامة على وجه طفل بريء او انسان عاجز او غير مقتدر
+                قد ترغب بمفاجأة صديق أو قريب بهدية او ان تساعد شخص بمنحة دراسية او تامين فرصة عمل تجد ذلك في منصة "معاً"</value>
+  </data>
+  <data name="HOME_SEARCHCITY" xml:space="preserve">
+    <value>البحث عن محافظة</value>
+  </data>
+  <data name="HOME_TEXT1" xml:space="preserve">
+    <value>مستفيد</value>
+  </data>
+  <data name="HOME_TEXT2_1" xml:space="preserve">
+    <value>أكثر من</value>
+  </data>
+  <data name="HOME_TEXT2_2" xml:space="preserve">
+    <value>متبرع</value>
+  </data>
+  <data name="HOME_TITLE_1" xml:space="preserve">
+    <value>التبرعات</value>
+  </data>
+  <data name="HOME_TITLE_2" xml:space="preserve">
+    <value>العينية</value>
+  </data>
+  <data name="HOUR" xml:space="preserve">
+    <value>ساعة</value>
+  </data>
+  <data name="HOURS" xml:space="preserve">
+    <value>ساعات</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>البريد الإلكتروني {0} غير صحيح</value>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>الكود غير صحيح أو منتهي الصلاحية</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>يجب أن يتكون اسم المستخدم من حروف وأرقام فقط</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="LOGIN_FORM" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="MINUTE" xml:space="preserve">
+    <value>دقيقة</value>
+  </data>
+  <data name="MINUTES" xml:space="preserve">
+    <value>دقائق</value>
+  </data>
+  <data name="NAV_ABOUT" xml:space="preserve">
+    <value>عن معاً</value>
+  </data>
+  <data name="NAV_CHARITIES" xml:space="preserve">
+    <value>الجمعيات الخيرية</value>
+  </data>
+  <data name="NAV_CONTACTUS" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="NAV_CONTROLPANEL" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="NAV_CREATE_NEWACCOUNT" xml:space="preserve">
+    <value>تسجيل حساب جديد</value>
+  </data>
+  <data name="NAV_FACEBOOK" xml:space="preserve">
+    <value>تسجيل الدخول بحساب فيسبوك</value>
+  </data>
+  <data name="NAV_GOOGLE" xml:space="preserve">
+    <value>تسجيل الدخول بحساب جوجل</value>
+  </data>
+  <data name="NAV_HOME" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="NAV_MYCHATS" xml:space="preserve">
+    <value>محادثاتي</value>
+  </data>
+  <data name="NAV_MYDONATIONS" xml:space="preserve">
+    <value>تبرعاتي</value>
+  </data>
+  <data name="NAV_MYPROFILE" xml:space="preserve">
+    <value>بياناتي الشخصية</value>
+  </data>
+  <data name="NAV_NEWACCOUNT" xml:space="preserve">
+    <value>مستخدم جديد</value>
+  </data>
+  <data name="NAV_PASSWORD" xml:space="preserve">
+    <value>تغيير كلمة السر</value>
+  </data>
+  <data name="NAV_REGISTER" xml:space="preserve">
+    <value>مستخدم جديد</value>
+  </data>
+  <data name="NAV_SIGNIN" xml:space="preserve">
+    <value>تسجيل دخول</value>
+  </data>
+  <data name="NAV_SIGNOUT" xml:space="preserve">
+    <value>تسجيل خروج</value>
+  </data>
+  <data name="NAV_TWITTER" xml:space="preserve">
+    <value>تسجيل الدخول بحساب تويتر</value>
+  </data>
+  <data name="NOW" xml:space="preserve">
+    <value>الآن</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>كلمة السر الحالية خاطئة</value>
+  </data>
+  <data name="PasswordRequireDigit" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة السر على أرقام</value>
+  </data>
+  <data name="PasswordRequireLower" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة السر على أحرف صغيرة</value>
+  </data>
+  <data name="PasswordRequireNonLetterOrDigit" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة السر على رقم أو رمز</value>
+  </data>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة السر على رموز</value>
+  </data>
+  <data name="PasswordRequireUpper" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة السر على حروف كبيرة</value>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>يجب أن تكون كلمة السر أطول من {0} أحرف</value>
+  </data>
+  <data name="PASSWORD_RESET_CONFIRMED" xml:space="preserve">
+    <value>تم إرسال بريد إلكتروني مع إرشادات لاسترجاع كلمة السر</value>
+  </data>
+  <data name="PASSWORD_RESET_SUCCESSFUL" xml:space="preserve">
+    <value>تم تغيير كلمة السر بنجاح، سيتم تحويلك لصفحة الدخول بعد </value>
+  </data>
+  <data name="SEND" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="STAY_IN_CONTACT_1" xml:space="preserve">
+    <value>ابقى على</value>
+  </data>
+  <data name="STAY_IN_CONTACT_2" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="TITLE_ABOUT_1" xml:space="preserve">
+    <value>عن</value>
+  </data>
+  <data name="TITLE_ABOUT_2" xml:space="preserve">
+    <value>معاً</value>
+  </data>
+  <data name="TITLE_CHARITIES_1" xml:space="preserve">
+    <value>الجمعيات</value>
+  </data>
+  <data name="TITLE_CHARITIES_2" xml:space="preserve">
+    <value>الخيرية</value>
+  </data>
+  <data name="TITLE_CONTACT_1" xml:space="preserve">
+    <value>اتصل</value>
+  </data>
+  <data name="TITLE_CONTACT_2" xml:space="preserve">
+    <value>بنا</value>
+  </data>
+  <data name="TITLE_DONATIONS_1" xml:space="preserve">
+    <value>التبرعات</value>
+  </data>
+  <data name="TITLE_DONATIONS_2" xml:space="preserve">
+    <value>العينية</value>
+  </data>
+  <data name="UserNameNotFound" xml:space="preserve">
+    <value>المستخدم {0} غير موجود</value>
+  </data>
+  <data name="USER_INACTIVE" xml:space="preserve">
+    <value>تم إيقاف هذا المستخدم، يرجى مراجعة مدير النظام</value>
+  </data>
+  <data name="VALIATION_DESCRIPTION_REGEX" xml:space="preserve">
+    <value>يجب أن يكون {0} أكثر من {2} خانات و أقل من {1} خانة</value>
+  </data>
+  <data name="VALIDATION_CATEGORY_REQUIRED" xml:space="preserve">
+    <value>يجب اختيار التصنيف</value>
+  </data>
+  <data name="VALIDATION_CITY_REQUIRED" xml:space="preserve">
+    <value>يجب اختيار المحافظة</value>
+  </data>
+  <data name="VALIDATION_CONFIRMPASSWORD_REQUIRED" xml:space="preserve">
+    <value>يجب أن تطابق كلمة السر</value>
+  </data>
+  <data name="VALIDATION_DESCRIPTION_REQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_EMAIL_REQUIRED" xml:space="preserve">
+    <value>يرجى إدخال البريد الإلكتروني</value>
+  </data>
+  <data name="VALIDATION_FULLNAME_REQUIRED" xml:space="preserve">
+    <value>يرجى إدخال الاسم الكامل</value>
+  </data>
+  <data name="VALIDATION_NEWPASSWORD_REQUIRED" xml:space="preserve">
+    <value>يجب إدخال كلمة المرور الجديدة</value>
+  </data>
+  <data name="VALIDATION_OLDPASSWORD_REQUIRED" xml:space="preserve">
+    <value>يجب إدخال كلمة السر الحالية</value>
+  </data>
+  <data name="VALIDATION_PASSWORD_REGEX" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة السر على حروف وأرقام ورمز</value>
+  </data>
+  <data name="VALIDATION_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>يجب إدخال كلمة المرور</value>
+  </data>
+  <data name="VALIDATION_PHONE_REQUIRED" xml:space="preserve">
+    <value>يرجى إدخال رقم الهاتف</value>
+  </data>
+  <data name="VALIDATION_REGEX" xml:space="preserve">
+    <value>يجب أن يكون {0} أكثر من {2} خانات و أقل من {1} خانة</value>
+  </data>
+  <data name="VALIDATION_REGEX_EMAIL" xml:space="preserve">
+    <value>يرجى إدخال بريد إلكتروني صحيح</value>
+  </data>
+  <data name="VALIDATION_REGEX_PHONENUMBER" xml:space="preserve">
+    <value>يرجى إدخال رقم هاتف صحيح</value>
+  </data>
+  <data name="VALIDATION_TITLE_REGEX" xml:space="preserve">
+    <value>يجب أن يكون {0} أكثر من {2} خانات و أقل من {1} خانة</value>
+  </data>
+  <data name="VALIDATION_TITLE_REQUIRED" xml:space="preserve">
+    <value>يجب إدخال اسم التبرع</value>
+  </data>
+  <data name="VALIDATION_TYPE_REQUIRED" xml:space="preserve">
+    <value>يرجى اختيار نوع المستخدم</value>
+  </data>
+</root>

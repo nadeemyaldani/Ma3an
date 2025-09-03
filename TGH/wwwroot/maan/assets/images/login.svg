@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86" height="87" viewBox="0 0 86 87">
+  <defs>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="86" height="87"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="86" height="87" fill="rgba(255,255,255,0)"/>
+    <g id="login" transform="translate(8.167 6.665)">
+      <g id="Group_6" data-name="Group 6" transform="translate(0 0.001)">
+        <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+          <circle id="Ellipse_1" data-name="Ellipse 1" cx="3" cy="3" r="3" transform="translate(45.833 46.834)" fill="#fff"/>
+          <path id="Path_1" data-name="Path 1" d="M34.244,67.913H11.511a5.762,5.762,0,0,1-5.755-5.755v-23.6a5.762,5.762,0,0,1,5.755-5.755H52.948A5.762,5.762,0,0,1,58.7,38.561v5.755a2.878,2.878,0,0,0,5.755,0V38.561A11.524,11.524,0,0,0,52.948,27.051H49.49V16.9A17.106,17.106,0,0,0,32.224,0,17.106,17.106,0,0,0,14.958,16.9V27.051H11.511A11.524,11.524,0,0,0,0,38.561v23.6A11.524,11.524,0,0,0,11.511,73.668H34.244a2.878,2.878,0,1,0,0-5.755ZM20.714,16.9A11.345,11.345,0,0,1,32.224,5.756,11.345,11.345,0,0,1,43.735,16.9V27.051H20.714V16.9Z" transform="translate(0 -0.001)" fill="#fff"/>
+          <path id="Path_2" data-name="Path 2" d="M297.658,322.537a2.877,2.877,0,0,0-4.015.665L279.46,343.014a1.644,1.644,0,0,1-2.366.123l-9.166-8.945a2.878,2.878,0,1,0-4.02,4.119l9.182,8.961.026.025a7.419,7.419,0,0,0,5.1,2.04q.244,0,.488-.016a7.419,7.419,0,0,0,5.276-2.748q.05-.063.1-.128l14.242-19.893A2.878,2.878,0,0,0,297.658,322.537Z" transform="translate(-225.194 -275.669)" fill="#fff"/>
+          <circle id="Ellipse_2" data-name="Ellipse 2" cx="3" cy="3" r="3" transform="translate(34.833 46.834)" fill="#fff"/>
+          <circle id="Ellipse_3" data-name="Ellipse 3" cx="3" cy="3" r="3" transform="translate(12.833 46.834)" fill="#fff"/>
+          <circle id="Ellipse_4" data-name="Ellipse 4" cx="3" cy="3" r="3" transform="translate(23.833 46.834)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

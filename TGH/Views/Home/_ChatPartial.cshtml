@@ -1,0 +1,197 @@
+﻿@using TGH.Helpers;
+@using TGH.Models;
+@model List<Conversation>
+@{
+    Layout = null;
+    var current = currentUser.User;
+
+}
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <style type="text/css">
+
+        
+    </style>
+</head>
+
+<!-- Users box-->
+<div class="col-4 px-0">
+    <div class="bg-white">
+        <div class="bg-gray px-4 chat-subject py-2 bg-light text-right">
+            <p class="h5 mb-0 py-1 chat-title">@language.Getkey("CHAT_CONVERSATIONS")</p>
+        </div>
+        <div class="messages-box">
+            <div class="list-group rounded-0">
+                @foreach (Conversation conversation in Model)
+                {
+                    string color = "list-group-item-light";
+
+                    if (current.Id == conversation.DonatorId && !conversation.DonatorRead)
+                    {
+                        color = "list-group-item-blue";
+                    }
+                <a onclick="GetMessages(@conversation.Id)" id="conversation_@conversation.Id" class="list-group-item list-group-item-action rounded-0 @color">
+                    <div class="media">
+                        @if (conversation.Donation?.Images == null || conversation.Donation?.Images.Count == 0)
+                        {
+                            <img src="~/maan/assets/images/donation-placeholder.jpeg" alt="Author" width="50" class="rounded-circle chat-image">
+                        }
+                        else
+                        {
+                            <img src="data:image/jpeg;base64,@conversation.Donation?.Images.FirstOrDefault()?.Content" alt="Author" width="50" class="rounded-circle chat-image">
+                        }
+                    <div class="media-body ml-4">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">@conversation.Donation?.Title</h6><small class="small font-weight-bold">@conversation.Date.ToString("ddd yyyy-MMM-dd")</small>
+                        </div>
+                        @if (conversation.Messages != null && conversation.Messages.Any())
+                        {
+                            <p class="font-italic mb-0 text-small">
+                                @conversation.Messages.FirstOrDefault().Text
+                            </p>
+                        }
+                        else
+                        {
+                            <p class="font-italic mb-0 text-small">
+                            </p>
+                        }
+                        @if (@conversation.Notifications?.Where(w => !w.IsRead && w.UserID == current.Id && w.RelatedItemID == conversation.Id).Count() > 0)
+                        {
+                            <div class="chat-notification-span">
+                                @conversation.Notifications?.Where(w => !w.IsRead && w.UserID == current.Id && w.RelatedItemID == conversation.Id).Count()
+                            </div>
+                        }
+                    </div>
+                    </div>
+                  
+
+                </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chat Box-->
+<div class="col-8 px-0">
+    <div id="dvMessages" class="px-4 py-5 chat-box bg-white">
+        @await Html.PartialAsync("Messages", Model.FirstOrDefault() ?? new Conversation())
+    </div>
+
+    <!-- Typing area -->
+    <div id="typingarea" style="display:none" class="bg-light">
+        <div class="input-group">
+            <input type="text" placeholder="@language.Getkey("CHAT_ENTERMESSAGE")" id="txtMessage" aria-describedby="button-addon2" class="form-control rounded-0 border-0 px-1 py-4 bg-light chat-message">
+            <div class="input-group-append">
+                <button id="button-addon2" onclick="SendMessage()" type="button" style="color: #2dcdcb" class="btn btn-link send-button"> <i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hdnConfirmMessage" value="@language.Getkey("CHAT_DELETE_CONFIRM")" />
+
+</div>
+
+<script>
+    function DeleteMessage(id) {
+        if (confirm($("#hdnConfirmMessage").val())) {
+            $.ajax({
+                url: '@Url.Action("DeleteMessage","Home")?id=' + id,
+                type: 'GET',
+                data: {},
+                success: function (data) {
+                    $("#dvMessage_" + id).remove();
+                },
+                error: function (request, error) {
+                }
+            });
+        }
+        else {
+
+        }
+    }
+    //setInterval(function () {
+    //    if (selectedConversation > 0) {
+    //        GetMessages(selectedConversation);
+    //    }
+    //}, 30000);
+
+    $(document).ready(function () {
+
+        var conversationId = '@ViewData["ConversationId"]';
+
+        if (conversationId && conversationId != '') {
+            GetMessages(conversationId);
+        }
+    })
+    $("#txtMessage").keypress(function (event) {
+        if (event.keyCode === 13) {
+            $("#button-addon2").click();
+        }
+    });
+    var selectedConversation = -1;
+
+    function GetMessages(conversationId) {
+        var id = conversationId;
+
+        $(".active").addClass('list-group-item-light');
+
+        $(".list-group-item").removeClass("active");
+
+        $("#conversation_" + id).addClass("active");
+        $("#conversation_" + id).removeClass("list-group-item-light");
+        $("#conversation_" + id).removeClass("list-group-item-blue");
+
+        selectedConversation = id;
+
+        $.ajax({
+            url: '@Url.Action("GetMessages","Home")?conversationId=' + conversationId,
+            type: 'GET',
+            data: {
+
+            },
+            success: function (data) {
+                $("#dvMessages").html('');
+                $("#dvMessages").html(data);
+
+                $("#typingarea").show();
+
+                $("#dvMessages").animate({ scrollTop: $('#dvMessages').prop("scrollHeight") }, 1000);
+            },
+            error: function (request, error) {
+            }
+        });
+    }
+
+    function SendMessage() {
+
+        var message = $("#txtMessage").val();
+
+        if (!message || message == '') {
+            return;
+        }
+
+        if (selectedConversation < 0) {
+            return;
+        }
+
+        $.ajax({
+            url: '@Url.Action("SendMessage","Home")?conversationId=' + selectedConversation + '&message=' + message,
+            type: 'GET',
+            async: false,
+            data: {},
+            success: function (data) {
+                if (data) {
+
+                    $("#txtMessage").val('');
+
+                    $("#dvNoContent").remove();
+
+                    $("#dvMessages").append('<div id="dvMessage_' + data + '" class="media w-50 ml-auto mb-3"><a href="#" onclick="DeleteMessage(' + data + ')"><i class="fa fa-close"></i></a><div class= "media-body"><div class="bg-primary rounded py-2 px-3 mb-2"> <p class="text-small mb-0 text-white">'
+                        + message + '</p></div><p class="small text-muted">' + '@DateTime.Now.ToTimeZoneTime().ToString("ddd yyyy-MMM-dd hh:mm tt")' + '</p></div></div>');
+                }
+            },
+            error: function (request, error) {
+            }
+        });
+    }
+
+</script>

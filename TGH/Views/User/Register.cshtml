@@ -1,0 +1,200 @@
+﻿@model TGH.Models.RegisterModel
+
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+<!-- Page Banner Start -->
+<div class="section page-banner">
+
+    <!-- <img class="shape-1 animation-round" src="~/maan/assets/images/shape/shape-8.png" alt="Shape"> -->
+
+    <img class="shape-2" src="~/maan/assets/images/shape/@CultureInfo.CurrentUICulture.Name-shape-23.png" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/home">@language.Getkey("NAV_HOME")</a></li>
+                <li class="active">@language.Getkey("NAV_NEWACCOUNT")</li>
+            </ul>
+            <h2 class="title">@language.Getkey("NAV_CREATE_NEWACCOUNT")</h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <img src="~/maan/assets/images/login.svg" alt="Shape" width="50">
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="~/maan/assets/images/shape/shape-6.png" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+    <!-- <img class="shape-3" src="~/maan/assets/images/shape/shape-24.png" alt="Shape"> -->
+
+    @*<img class="shape-author" src="~/maan/assets/images/author/author-11.jpg" alt="Shape">*@
+
+</div>
+<!-- Page Banner End -->
+<!-- Register & Login Start -->
+<div class="section section-padding">
+    <div class="container">
+        <!-- Register & Login Wrapper Start -->
+        <div class="register-login-wrapper">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <!-- Register & Login Images Start -->
+                    <div class="register-login-images">
+                        <div class="register-login-form">
+                            <h3 class="title">@language.Getkey("NAV_CREATE_NEWACCOUNT")</h3>
+                            @*<div class="note">
+                                <span>@language.Getkey("FORM_NOTE")</span>
+                                <div>
+                                    @language.Getkey("FORM_NOTE_MESSAGE").
+                                </div>
+                            </div>*@
+                            <div class="form-wrapper">
+                                <form asp-action="Register" method="post" enctype="multipart/form-data">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <!-- Single Form Start -->
+
+                                    <div class="single-form">
+                                        <input asp-for="MobileNumber" placeholder="@language.Getkey("FORM_PHONE")" class="form-control" />
+                                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="single-form">
+                                        <input asp-for="Email" placeholder="@language.Getkey("FORM_EMAIL")" class="form-control" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-form">
+                                        <input asp-for="FullName" placeholder="@language.Getkey("FORM_FULLNAME")" class="form-control" />
+                                        <span asp-validation-for="FullName" class="text-danger"></span>
+                                    </div>
+
+                                    @*<div class="single-form">
+                                        <input asp-for="Description" placeholder="@language.Getkey("FORM_DESCRIPTION")" class="form-control" />
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>*@
+
+                                    <div class="single-form">
+                                        <div class="newest-select">
+                                            <select asp-for="Type" class="form-control" asp-items='ViewData["UserTypes"] as List<SelectListItem>'>
+                                                @*<option selected="selected" value="">نوع المستخدم</option>*@
+                                            </select>
+                                            <span asp-validation-for="Type" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-form">
+                                        <div class="newest-select">
+                                            <select asp-for="City" class="form-control" asp-items='ViewData["Cities"] as List<SelectListItem>'>
+                                                <option selected="selected" value="">@language.Getkey("FORM_CITY")</option>
+                                            </select>
+                                            <span asp-validation-for="City" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="single-form" style="display: flex; justify-content: space-between;">
+                                        <input type="text" id="txtFilenames" placeholder="@language.Getkey("FORM_PICTURE")" style="width: 70%;">
+                                        <div id="btnUpload" class="btn btn-primary">
+                                            <input type="file" class="hidden" id="formFiles" name="formFiles" style="position:fixed;" accept="image/png, image/jpeg">
+                                            <label class="custom-file-label">@language.Getkey("FORM_UPLOAD")</label>
+                                        </div>
+                                    </div>
+                                    <img id="image_upload_preview" width="100" height="100" src="" style="display:none" alt="your image" />
+                                    <!-- Single Form End -->
+                                    <!-- Single Form Start -->
+                                    <div class="single-form">
+                                        <input asp-for="Password" placeholder="@language.Getkey("FORM_PASSWORD")" class="form-control" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-form">
+                                        <input asp-for="ConfirmPassword" placeholder="@language.Getkey("FORM_CONFIRMPASSWORD")" class="form-control" />
+                                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                    </div>
+                                    <br />
+                                    <!-- Single Form End -->
+                                    <!-- Single Form Start -->
+                                    <div class="message-btn">
+                                        <input type="submit" value="@language.Getkey("SEND")" class="btn btn-primary btn-hover-dark" style="margin: 0px 8px;">
+                                        <a href="/home/index" class="btn btn-secondary btn-hover-primary" style="margin: 0px 8px;"> @language.Getkey("FORM_CANCEL") </a>
+                                    </div>
+                                    <!-- Single Form End -->
+                                </form>
+                                <br><br>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- Register & Login Images End -->
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Register & Login Wrapper End -->
+
+    </div>
+</div>
+<!-- Register & Login End -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    $("#btnUpload").on('click', function () {
+        $("#formFiles").click();
+    });
+
+    $("#formFiles").on('change', function () {
+
+        var fileNames = '';
+
+        $("#txtFilenames").val('');
+
+        jQuery.each($("#formFiles")[0].files, function (i, val) {
+            fileNames += val.name;
+
+            if (i != $("#formFiles")[0].files.length - 1) {
+                fileNames += ",";
+            }
+        });
+
+        $("#txtFilenames").val(fileNames);
+
+        if ($("#formFiles")[0].files[0] && $("#formFiles")[0].files[0] != '' && $("#formFiles")[0].files[0].size > 0) {
+            $("#image_upload_preview").show();
+        }
+        else {
+            $("#image_upload_preview").hide();
+        }
+
+        readURL(this);
+
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                if (e.target.result != '') {
+                    $('#image_upload_preview').attr('src', e.target.result);
+                }
+                else {
+                    $("#image_upload_preview").hide();
+                }
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

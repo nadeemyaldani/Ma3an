@@ -1,0 +1,403 @@
+﻿@using TGH.Models;
+@using TGH.Helpers;
+@model List<Donation>
+@{
+    var groupedDonations = Model.GroupBy(d => d.CategoryId);
+    var categories = ViewData["Categories"] as List<Category>;
+    var cities = ViewData["Cities"] as List<City>;
+    var key = ViewData["Key"].ToString();
+    var donationId = ViewData["DonationId"];
+    var current = currentUser.User;
+}
+<div class="section slider-section">
+    <div class="container">
+        <!-- Slider Content Start -->
+        <div class="slider-content">
+            <h2 class="main-title"><strong>@language.Getkey("HOME_MA3AN")</strong></h2>
+            <p>
+                @language.Getkey("HOME_MA3ANDESCRIPTION")
+            </p>
+            <a class="btn btn-primary btn-hover-dark" href="/donation/add">@language.Getkey("HOME_DONATENOW")</a>
+        </div>
+        <!-- Slider Content End -->
+    </div>
+    <!-- Slider Courses Box Start -->
+    <div class="slider-courses-box">
+        <img class="shape-1 animation-left" src="~/maan/assets/images/shape/@CultureInfo.CurrentUICulture.Name-shape-5.png" alt="Shape">
+        <div class="box-content">
+            <div class="box-wrapper">
+                <div><p>@language.Getkey("HOME_TEXT2_1")</p></div>
+                <span class="count">1,000+</span>
+                <div><p> @language.Getkey("HOME_TEXT2_2") </p></div>
+            </div>
+        </div>
+        <img class="shape-2" src="~/maan/assets/images/shape/shape-6.png" alt="Shape">
+    </div>
+    <!-- Slider Courses Box End -->
+    <!-- Slider Rating Box Start -->
+    <div class="slider-rating-box">
+
+        <div class="box-rating">
+            <div class="box-wrapper">
+                <span class="count">5,000 +</span>
+                <p>@language.Getkey("HOME_TEXT1") </p>
+            </div>
+        </div>
+
+        <img class="shape animation-up" src="~/maan/assets/images/shape/@CultureInfo.CurrentUICulture.Name-shape-7.png" alt="Shape">
+
+    </div>
+    <!-- Slider Rating Box End -->
+    <!-- Slider Images Start -->
+    <div class="slider-images">
+        <div class="images">
+            <img src="~/maan/assets/images/slider/slider-1.png" alt="Slider">
+        </div>
+    </div>
+    <!-- Slider Images End -->
+    <!-- Slider Video Start -->
+    <div class="slider-video">
+        <img class="shape-1" src="~/maan/assets/images/shape/@CultureInfo.CurrentUICulture.Name-shape-9.png" alt="Shape">
+
+        <div class="video-play">
+            <img src="~/maan/assets/images/shape/shape-10.png" alt="Shape">
+            <!-- <a class="play video-popup"><i class="flaticon-play"></i></a> -->
+        </div>
+    </div>
+    <!-- Slider Video End -->
+
+</div>
+
+<div class="section section-padding-02">
+    <div class="container">
+
+        <!-- All Courses Top Start -->
+        <div class="courses-top">
+
+            <!-- Section Title Start -->
+            <div class="section-title shape-01">
+                <h2 class="main-title">
+                    <span>
+                        @language.Getkey("TITLE_DONATIONS_1")
+                    </span> @language.Getkey("TITLE_DONATIONS_2")
+                </h2>
+            </div>
+            <!-- Section Title End -->
+            <!-- Courses Search Start -->
+            <div style="display: flex;">
+                <div class="courses-search" style="max-width: 133px; margin: 0px 10px;display:none">
+                    <a class="btn btn-primary btn-hover-dark" href="/donation/add">@language.Getkey("HOME_DONATENOW")</a>
+                </div>
+                <div class="courses-search">
+                    <form asp-action="Index" method="get">
+                        <input type="text" name="key" placeholder="@language.Getkey("HOME_SEARCHCITY")" list="cityList">
+                        <datalist id="cityList">
+                            @foreach (var item in cities)
+                            {
+                                @if (language.Arabic)
+                                {
+                                    <option>@item.NameAR</option>
+                                }
+                                else
+                                {
+                                    <option>@item.NameEN</option>
+                                }
+                            }
+                        </datalist>
+                        <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+            <!-- Courses Search End -->
+
+        </div>
+        <!-- All Courses Top End -->
+        <!-- All Courses Tabs Menu Start -->
+        <div class="courses-tabs-menu courses-active">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper nav">
+                    <li class="swiper-slide"><button class="active" data-bs-toggle="tab" data-bs-target="#tabs_0">@language.Getkey("ALL")</button></li>
+                    @foreach (Category category in categories)
+                    {
+                        <li class="swiper-slide">
+                            <button data-bs-toggle="tab" data-bs-target="#tabs_@category.Id">
+                                @if (language.Arabic)
+                                {
+                                    @category.NameAr
+                                }
+                                else
+                                {
+                                    @category.NameEn
+                                }
+                            </button>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-button-next"><i class="icofont-rounded-right"></i></div>
+            <div class="swiper-button-prev"><i class="icofont-rounded-left"></i></div>
+        </div>
+        <!-- All Courses Tabs Menu End -->
+        <!-- All Courses tab content Start -->
+        <div class="tab-content courses-tab-content">
+            <div class="tab-pane fade show active" id="tabs_0">
+                <!-- All Courses Wrapper Start -->
+                <div class="courses-wrapper">
+                    <div class="row">
+                        @foreach (Donation donation in Model)
+                        {
+                            <div class="col-lg-4 col-md-6">
+                                <!-- Single Courses Start -->
+                                <div class="single-courses">
+                                    <div class="courses-images">
+                                        @if (donation.Images != null && donation.Images.Any())
+                                        {
+                                            <a><img src="data:image/jpeg;base64,@donation.Images.FirstOrDefault()?.Content" alt="Courses"></a> }
+                                        else
+                                        {
+                                            <a><img src="~/maan/assets/images/donation-placeholder.jpeg" alt="Courses"></a>
+                                        }
+                                    </div>
+                                    <div class="courses-content">
+                                        <h4 class="title"><a>@donation.Title</a></h4>
+                                        <div class="courses-meta">
+                                            @{
+                                                var date = (DateTime.Now - donation.Date).TotalHours;
+                                                double time = -1.0;
+                                                if (date < 1)
+                                                {
+                                                    time = Math.Floor((DateTime.Now - donation.Date).TotalMinutes);
+                                                }
+                                            }
+
+                                            @if (time == 0)
+                                            {
+                                                <span> <i class="icofont-clock-time"></i> @language.Getkey("NOW") </span>
+                                            }
+                                            else if (time > -1)
+                                            {
+                                                if (Math.Floor(time) <= 10)
+                                                {
+                                                    <span> <i class="icofont-clock-time"></i> @Math.Floor(time) @language.Getkey("MINUTES")</span>
+                                                }
+                                                else
+                                                {
+                                                    <span> <i class="icofont-clock-time"></i> @Math.Floor(time) @language.Getkey("MINUTE")</span>
+                                                }
+                                            }
+                                            else if (date < 24)
+                                            {
+                                                if (date <= 10)
+                                                {
+                                                    <span> <i class="icofont-clock-time"></i> @Math.Floor(date) @language.Getkey("HOURS")</span>
+                                                }
+                                                else
+                                                {
+                                                    <span> <i class="icofont-clock-time"></i> @Math.Floor(date) @language.Getkey("HOUR")</span>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (@Math.Floor(date / 24) <= 10)
+                                                {
+                                                    <span> <i class="icofont-clock-time"></i> @Math.Floor(date / 24) @language.Getkey("DAYS")</span>
+                                                }
+                                                else
+                                                {
+                                                    <span> <i class="icofont-clock-time"></i> @Math.Floor(date / 24) @language.Getkey("DAY")</span>
+                                                }
+                                            }
+                                            @if (language.Arabic)
+                                            {
+                                                <span> <i class="icofont-location-pin"></i> @donation.City.NameAR </span>
+                                            }
+                                            else
+                                            {
+                                                <span> <i class="icofont-location-pin"></i> @donation.City.NameEN </span>
+                                            }
+                                        </div>
+                                        <br>
+                                        <div class="courses-author">
+                                            <div class="author">
+                                                <div class="author-thumb">
+                                                    @if (donation.User.Image == null)
+                                                    {
+                                                        <a><img src="~/maan/assets/images/man.svg" alt="Author"></a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a><img src="data:image/jpeg;base64,@donation.User.Image" alt="Author"></a>
+                                                    }
+                                                </div>
+                                                <div class="author-name">
+                                                    @if (donation.ShowName)
+                                                    {
+                                                        <a class="name">@donation.User.FullName</a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="name">@UIHelper.GetUserTypeName(donation.User.Type)</a>
+                                                    }
+                                                </div>
+                                            </div>
+                                            @if (current == null || donation.UserId != current.Id)
+                                            {
+                                                <div class="tag">
+                                                    <a href="/home/CreateChat?donationId=@donation.Id">@language.Getkey("HOME_CHATNOW")</a>
+                                                </div>
+                                            }
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Single Courses End -->
+                            </div>
+                        }
+                    </div>
+                </div>
+                <!-- All Courses Wrapper End -->
+            </div>
+            @foreach (Category category in categories)
+            {
+                <div class="tab-pane fade" id="tabs_@category.Id">
+                    <!-- All Courses Wrapper Start -->
+                    <div class="courses-wrapper">
+                        <div class="row">
+                            @{
+                                var donations = groupedDonations.FirstOrDefault(o => o.Key == category.Id);
+                            }
+                            @if (donations != null && donations.Any())
+                            {
+                                foreach (Donation donation in donations)
+                                {
+                                    <div class="col-lg-4 col-md-6">
+                                        <!-- Single Courses Start -->
+                                        <div class="single-courses">
+                                            <div class="courses-images">
+                                                @if (donation.Images != null && donation.Images.Any())
+                                                {
+                                                    <a><img src="data:image/jpeg;base64,@donation.Images.FirstOrDefault()?.Content" alt="Courses"></a>
+                                                }
+                                                else
+                                                {
+                                                    <a><img src="~/maan/assets/images/donation-placeholder.jpeg" alt="Courses"></a>
+                                                }
+                                            </div>
+                                            <div class="courses-content">
+                                                <h4 class="title"><a>@donation.Title</a></h4>
+                                                <div class="courses-meta">
+                                                    @{
+                                                        var date = (DateTime.Now - donation.Date).TotalHours;
+                                                        double time = -1.0;
+                                                        if (date < 1)
+                                                        {
+                                                            time = Math.Floor((DateTime.Now - donation.Date).TotalMinutes);
+                                                        }
+                                                    }
+
+                                                    @if (time == 0)
+                                                    {
+                                                        <span> <i class="icofont-clock-time"></i> @language.Getkey("NOW") </span>
+                                                    }
+                                                    else if (time > -1)
+                                                    {
+                                                        if (Math.Floor(time) <= 10)
+                                                        {
+                                                            <span> <i class="icofont-clock-time"></i> @Math.Floor(time) @language.Getkey("MINUTES")</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span> <i class="icofont-clock-time"></i> @Math.Floor(time) @language.Getkey("MINUTE")</span>
+                                                        }
+                                                    }
+                                                    else if (date < 24)
+                                                    {
+                                                        if (date <= 10)
+                                                        {
+                                                            <span> <i class="icofont-clock-time"></i> @Math.Floor(date) @language.Getkey("HOURS")</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span> <i class="icofont-clock-time"></i> @Math.Floor(date) @language.Getkey("HOUR")</span>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (@Math.Floor(date / 24) <= 10)
+                                                        {
+                                                            <span> <i class="icofont-clock-time"></i> @Math.Floor(date / 24) @language.Getkey("DAYS")</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span> <i class="icofont-clock-time"></i> @Math.Floor(date / 24) @language.Getkey("DAY")</span>
+                                                        }
+                                                    }
+                                                    @if (language.Arabic)
+                                                    {
+                                                        <span> <i class="icofont-location-pin"></i> @donation.City.NameAR </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span> <i class="icofont-location-pin"></i> @donation.City.NameEN </span>
+                                                    }
+                                                </div>
+                                                <br>
+                                                <div class="courses-author">
+                                                    <div class="author">
+                                                        <div class="author-thumb">
+                                                            @if (donation.User.Image == null)
+                                                            {
+                                                                <a><img src="~/maan/assets/images/man.svg" alt="Author"></a>
+                                                            }
+                                                            else
+                                                            {
+                                                                <a><img src="data:image/jpeg;base64,@donation.User.Image" alt="Author"></a>
+                                                            }
+                                                        </div>
+                                                        <div class="author-name">
+                                                            @if (donation.ShowName)
+                                                            {
+                                                                <a class="name">@donation.User.FullName</a>
+                                                            }
+                                                            else
+                                                            {
+                                                                <a class="name">@UIHelper.GetUserTypeName(donation.User.Type)</a>
+                                                            }
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    @if (current == null || donation.UserId != current.Id)
+                                                    {
+                                                        <div class="tag">
+                                                            <a href="/home/CreateChat?donationId=@donation.Id">@language.Getkey("HOME_CHATNOW")</a>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Courses End -->
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <!-- All Courses Wrapper End -->
+                </div>
+            }
+        </div>
+        <!-- All Courses tab content End -->
+        <!-- All Courses BUtton Start -->
+        @*<div class="courses-btn text-center">
+                <a class="btn btn-secondary btn-hover-primary">المزيد </a>
+            </div>*@
+        <!-- All Courses BUtton End -->
+        <br><br>
+    </div>
+</div>
+
+<script>
+
+   
+</script>

@@ -1,0 +1,125 @@
+﻿@model TGH.Models.LoginModel
+<!-- Page Banner Start -->
+<link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
+<div class="section page-banner">
+
+    <!-- <img class="shape-1 animation-round" src="~/maan/assets/images/shape/shape-8.png" alt="Shape"> -->
+    @*<img class="shape-2" src="~/maan/assets/images/shape/en-US-shape-23.png" alt="Shape">*@
+    <img class="shape-2" src="~/maan/assets/images/shape/@CultureInfo.CurrentUICulture.Name-shape-23.png" alt="Shape">
+    
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/home">@language.Getkey("NAV_HOME")</a></li>
+                <li class="active">@language.Getkey("NAV_SIGNIN")</li>
+            </ul>
+            <h2 class="title">@language.Getkey("LOGIN_FORM")</h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <img src="~/maan/assets/images/login.svg" alt="Shape" width="50">
+                <!-- <i class="flaticon-login"></i> -->
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="~/maan/assets/images/shape/shape-6.png" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+    <!-- <img class="shape-3" src="~/maan/assets/images/shape/shape-24.png" alt="Shape"> -->
+
+    <img class="shape-author" src="~/maan/assets/images/author/@CultureInfo.CurrentUICulture.Name-author-11.jpg" alt="Shape">
+
+</div>
+<!-- Page Banner End -->
+<!-- Register & Login Start -->
+<div class="section section-padding">
+    <div class="container">
+        <!-- Register & Login Wrapper Start -->
+        <div class="register-login-wrapper">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <!-- Register & Login Images Start -->
+                    <div class="register-login-images">
+                        <div class="register-login-form">
+                            <h3 class="title">@language.Getkey("LOGIN_FORM")</h3>
+                            <div class="single-form">
+                                @{
+                                    if ((Model?.ExternalLogins?.Count ?? 0) == 0)
+                                    {
+                                        <div>
+                                            <p>
+                                                There are no external authentication services configured.
+                                            </p>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                            <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" class="form-horizontal">
+                                <div>
+                                    <p>
+                                        @foreach (var provider in Model.ExternalLogins)
+                                        {
+                                            @if (provider.DisplayName.ToLower() == "facebook")
+                                            {
+                                                <div class="auth__social">
+                                                    <button type="submit" class=" social-button  auth__@provider.DisplayName.ToLower() button button--flat button--md button--@provider.DisplayName.ToLower() button--icon font-sm full-width" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                                        <i class="fab fa-@provider.DisplayName.ToLower()-f "></i>
+                                                        <span>@provider.DisplayName</span>
+                                                    </button>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="auth__social">
+                                                    <button type="submit" class=" social-button  auth__@provider.DisplayName.ToLower() button button--flat button--md button--@provider.DisplayName.ToLower() button--icon font-sm full-width" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                                        <i class="fab fa-@provider.DisplayName.ToLower() "></i>
+                                                        <span>@provider.DisplayName</span>
+                                                    </button>
+                                                </div>
+                                            }
+
+
+                                        }
+
+                                    </p>
+                                </div>
+                                
+                            </form>
+                                        
+                                    }
+                                }
+
+                            </div>
+                            <div class="form-wrapper">
+
+                                <form id="account" method="post">
+                                    <div class="single-form">
+                                        <a href="/user/adminlogin" class="btn btn-secondary btn-outline w-100">AdminLogin</a>
+                                    </div>
+                                    <!-- Single Form End -->
+                                </form>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Register & Login Images End -->
+                </div>
+            </div>
+        </div>
+        <!-- Register & Login Wrapper End -->
+    </div>
+</div>
+<!-- Register & Login End -->
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,81 @@
+﻿body {
+}
+.shape-author, .shape-2 {
+    display: none
+}
+
+.page-banner-content {
+    margin-top: 50px
+}
+
+.box-wrapper {
+    display: none
+}
+
+
+
+
+
+.register-login-form {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.single-form {
+    margin-bottom: 20px
+}
+
+.form-wrapper {
+    padding: 50px
+}
+
+.single-form button {
+    margin-bottom: 20px;
+    background-color: #46c3c3 !important;
+    border-color: #46c3c3 !important;
+}
+
+.bg-white {
+    background-color: hsl(180deg 51% 52%) !important;
+}
+
+.admin-nav{
+    padding-left: 100px;
+
+}
+    .admin-nav .text-dark {
+        color: white !important;
+    }
+    .admin-nav .nav-link {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+.create-btn {
+    display: inline-block;
+    height: 48px;
+    color: white !important;
+    width: 160px;
+    border-radius: 5px;
+    background-color: #46c3c3;
+    text-align: center;
+    padding-top: 10px;
+    float: right;
+}
+.create-btn a{
+    color: white;
+   
+}
+    .create-btn a:hover {
+        color: white;
+        text-decoration:none;
+    }
+
+.admin-table-header {
+    background-color: #e2dede;
+}
+.publish-btn{
+    color:red;
+}
+.table{
+    width: 100%;
+}

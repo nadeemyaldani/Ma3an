@@ -1,0 +1,91 @@
+﻿@using TGH.Models
+@using TGH.Helpers
+@model Conversation
+@{
+    Layout = null;
+}
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <style type="text/css">
+        .no-content-message {
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+
+@if (Model.Messages != null && Model.Messages.Any())
+{
+    var current = Model.DonatorId == currentUser.User.Id ? Model.Donator : Model.Customer;
+
+    var otherUser = Model.DonatorId == current.Id ? Model.Customer : Model.Donator;
+
+    var messages = Model.Messages.Where(m => m.SenderId == currentUser.User.Id ? !m.SenderDeleted : !m.ReceiverDeleted).ToList();
+    var showName = Model.Donation.ShowName;
+    var donatorName = Model.DonatorId == currentUser.User.Id ?( showName ? Model.Donator.FullName : "") : Model.Customer.FullName;
+    var otherUserName = Model.DonatorId == current.Id ? Model.Customer.FullName : (showName ? Model.Donator.FullName : "");
+    foreach (Message message in messages)
+    {
+        if (message.SenderId == current.Id)
+        {
+            <!-- Reciever Message-->
+                <div id="dvMessage_@message.Id" class="media w-100 chat-reciever ml-auto mb-3">
+                    @if (current.Image == null)
+                    {
+                        <img src="~/maan/assets/images/man.svg" alt="user" width="32" class="rounded-circle">
+                    }
+                    else
+                    {
+                        <img src="data:image/jpeg;base64,@current.Image" alt="user" width="32" class="rounded-circle">
+                    }
+                    <a href="#" style="color: #2dcdcb;" onclick="DeleteMessage(@message.Id)"><i class="fa fa-close"></i></a>
+                    <div class="media-body">
+                        <p class="text-small mb-0 text-black-50">@donatorName</p>
+                        <div class="bg-primary rounded py-2 px-3 mb-2">
+                            <p class="text-small mb-0 text-white">@message.Text</p>
+                        </div>
+                        <p class="small text-muted">@message.When.ToTimeZoneTime().ToString("ddd yyyy-MMM-dd hh:mm tt")</p>
+                    </div>
+                </div>
+        }
+        else
+        {
+            <!-- Sender Message-->
+            <div id="dvMessage_@message.Id" class="media w-100 mb-3 chat-sender" style="text-align:left !important">
+                @if (current.Image == null)
+                {
+                    <img src="~/maan/assets/images/man.svg" alt="user" width="32" class="rounded-circle">
+                }
+                else
+                {
+                    <img src="data:image/jpeg;base64,@current.Image" alt="user" width="32" class="rounded-circle">
+                }
+                <a href="#" style="color: #2dcdcb;" onclick="DeleteMessage(@message.Id)"><i class="fa fa-close"></i></a>
+                <div class="media-body ml-3 mt-2">
+                    <p class="text-small mb-0 text-muted">@otherUserName</p>
+                    <div class="bg-light rounded py-2 px-3 mb-2">
+                        <p class="text-small mb-0 text-muted">@message.Text</p>
+                    </div>
+                    <p class="small text-muted">@message.When.ToTimeZoneTime().ToString("ddd yyyy-MMM-dd hh:mm tt")</p>
+                </div>
+            </div>
+        }
+    }
+}
+else if (Model.Messages != null)
+{
+    <div id="dvNoContent" class="no-content-message">
+        <p>@language.Getkey("CHAT_NOMESSAGES")</p>
+    </div>
+}
+else
+{
+    <div id="dvNoContent" class="no-content-message">
+        <p>@language.Getkey("CHAT_PICKCONVERSATION")</p>
+    </div>
+}
+

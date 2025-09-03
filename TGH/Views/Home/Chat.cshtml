@@ -1,0 +1,22 @@
+﻿@using TGH.Models;
+@model List<Conversation>
+@{
+    var current = currentUser.User;
+}
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+
+<!-- Slider Start -->
+<div class="section slider-section-page">
+
+
+
+</div>
+<!-- Slider End -->
+
+<div class="container chat-container py-5 px-4">
+    <div class="row rounded-lg chat-wrapper overflow-hidden shadow">
+        @await Html.PartialAsync("_ChatPartial", Model)
+    </div>
+</div>

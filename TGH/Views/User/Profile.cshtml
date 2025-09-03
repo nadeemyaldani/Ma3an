@@ -1,0 +1,231 @@
+﻿@using TGH.Models
+@using TGH.Helpers
+@model ProfileUpdateModel
+@{
+
+}
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <style type="text/css">
+        .AClass {
+            position: absolute;
+        }
+    </style>
+</head>
+<div class="section page-banner">
+
+    <!-- <img class="shape-1 animation-round" src="~/maan/assets/images/shape/shape-8.png" alt="Shape"> -->
+
+    <img class="shape-2" src="~/maan/assets/images/shape/@CultureInfo.CurrentUICulture.Name-shape-23.png" alt="Shape">
+
+    <div class="container">
+        <!-- Page Banner Start -->
+        <div class="page-banner-content">
+            <ul class="breadcrumb">
+                <li><a href="/home">@language.Getkey("NAV_HOME")</a></li>
+                <li class="active">@language.Getkey("NAV_MYPROFILE")</li>
+            </ul>
+            <h2 class="title">@language.Getkey("FORM_PERSONALINFO")</h2>
+        </div>
+        <!-- Page Banner End -->
+    </div>
+
+    <!-- Shape Icon Box Start -->
+    <div class="shape-icon-box">
+
+        <div class="box-content">
+            <div class="box-wrapper">
+                <img src="~/maan/assets/images/login.svg" alt="Shape" width="50">
+                <!-- <i class="flaticon-login"></i> -->
+            </div>
+        </div>
+
+        <img class="icon-shape-2" src="~/maan/assets/images/shape/shape-6.png" alt="Shape">
+
+    </div>
+    <!-- Shape Icon Box End -->
+    <!-- <img class="shape-3" src="~/maan/assets/images/shape/shape-24.png" alt="Shape"> -->
+
+    <img class="shape-author" src="~/maan/assets/images/author/@CultureInfo.CurrentUICulture.Name-author-11.jpg" alt="Shape">
+
+</div>
+<div class="section section-padding">
+    <div class="container">
+        <!-- Register & Login Wrapper Start -->
+        <div class="register-login-wrapper">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <!-- Register & Login Images Start -->
+                    <div class="register-login-images">
+                        <div class="register-login-form">
+                            <h3 class="title">@language.Getkey("FORM_EDITPROFILE")</h3>
+                            <div class="form-wrapper">
+                                <form asp-action="profile" method="post" enctype="multipart/form-data">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                    @*@if (Model.Image != null && Model.Image != "")
+                                    {
+                                        <div class="user-img"><img id="pictureThumbnail" src="data:image/jpeg;base64,@Model.Image" alt="" /></div>
+                                    }
+                                    else
+                                    {
+                                        <div class="user-img"><img id="pictureThumbnail" src="~/maan/assets/images/author/author-02.jpeg" alt="" /></div>
+                                    }*@
+
+                                    <img id="pictureThumbnailSource" style="display:none" src="~/maan/assets/images/author/author-02.jpeg" alt="" />
+                                    <div class="single-form">
+                                        <input asp-for="MobileNumber" placeholder="@language.Getkey("FORM_PHONE")">
+                                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-form">
+                                        <input asp-for="Email" placeholder="@language.Getkey("FORM_EMAIL")" class="form-control" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-form">
+                                        <input asp-for="FullName" placeholder="@language.Getkey("FORM_FULLNAME")" class="form-control" />
+                                        @*<span asp-validation-for="FullName" class="text-danger"></span>*@
+                                    </div>
+                                    @*<div class="single-form">
+                                        <input asp-for="Description" placeholder="@language.Getkey("FORM_DESCRIPTION")" class="form-control" />
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>*@
+                                    <div class="single-form">
+                                        <div class="newest-select">
+                                            <select asp-for="City" class="form-control" asp-items='ViewData["Cities"] as List<SelectListItem>'>
+                                                @*<option value="">المحافظة</option>*@
+                                            </select>
+                                            <span asp-validation-for="City" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="single-form" style="display: flex; justify-content: space-between;">
+                                        <input type="text" id="txtFilenames" placeholder="@language.Getkey("FORM_PICTURE")" style="width: 70%;">
+                                        <div id="btnUpload" class="btn btn-primary">
+                                            <input type="file" class="hidden" id="formFiles" name="formFiles" style="position:fixed;" accept="image/png, image/jpeg">
+                                            <label class="custom-file-label">@language.Getkey("FORM_UPLOAD")</label>
+                                        </div>
+                                    </div>
+                                    @if (Model.Image != null && Model.Image != "")
+                                    {
+                                        <div id="dvImage" style="position:relative;">
+                                            <button type="button" onclick="DeleteImage()" class="close AClass">
+                                                <span>&times;</span>
+                                            </button>
+                                            <img id="image_upload_preview" width="200" height="200" src="data:image/jpeg;base64,@Model.Image" alt="your image" />
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div id="dvImage" style="position:relative;display:none">
+                                            <button type="button" onclick="DeleteImage()" class="close AClass">
+                                                <span>&times;</span>
+                                            </button>
+                                            <img id="image_upload_preview" width="200" height="200" src="" alt="your image" />
+                                        </div>
+                                    }
+                                    <!-- Single Form End -->
+                                    <br>
+                                    <br>
+                                    <!-- Single Form Start -->
+                                    <div class="message-btn">
+                                        <button type="submit" class="btn btn-primary btn-hover-dark w-40" style="margin: 0px 8px;">@language.Getkey("FORM_SAVE")</button>
+                                        <a href="/home" class="btn btn-secondary btn-hover-primary" style="margin: 0px 8px;">@language.Getkey("FORM_CANCEL")</a>
+                                    </div>
+                                    <!-- Single Form End -->
+                                </form>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Register & Login Images End -->
+                </div>
+            </div>
+            <input type="hidden" id="hdnConfirmMessage" value="@language.Getkey("FORM_DELETEPICTURE")" />
+        </div>
+        <!-- Register & Login Wrapper End -->
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<script>
+    $("#btnUpload").on('click', function () {
+        $("#formFiles").click();
+    });
+
+    $("#formFiles").on('change', function () {
+
+        var fileNames = '';
+
+        $("#txtFilenames").val('');
+
+        jQuery.each($("#formFiles")[0].files, function (i, val) {
+            fileNames += val.name;
+
+            if (i != $("#formFiles")[0].files.length - 1) {
+                fileNames += ",";
+            }
+        });
+
+        $("#txtFilenames").val(fileNames);
+
+        if ($("#formFiles")[0].files[0] && $("#formFiles")[0].files[0] != '' && $("#formFiles")[0].files[0].size > 0) {
+            $("#dvImage").show();
+        }
+        else {
+            $("#dvImage").hide();
+        }
+
+        readURL(this);
+
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                if (e.target.result != '') {
+                    $('#image_upload_preview').attr('src', e.target.result);
+                    $('#pictureThumbnail').attr('src', e.target.result);
+                    $("#dvImage").show();
+                }
+                else {
+                    $('#image_upload_preview').attr('src', e.target.result);
+                    $('#pictureThumbnail').attr('src', $("#pictureThumbnailSource").attr('src'));
+                    $("#dvImage").hide();
+                }
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+    function DeleteImage() {
+
+        if (confirm($("#hdnConfirmMessage").val())) {
+            $.ajax({
+                url: '@Url.Action("DeleteImage", "User")',
+                type: 'GET',
+                data: {
+
+                },
+                success: function (data) {
+                    if (data) {
+                        $('#image_upload_preview').attr('src', '');
+                        $('#pictureThumbnail').attr('src', $("#pictureThumbnailSource").attr('src'));
+                        $("#dvImage").hide();
+                    }
+                },
+                error: function (request, error) {
+                }
+            });
+        }
+    }
+
+</script>

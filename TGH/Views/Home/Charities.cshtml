@@ -1,0 +1,149 @@
+﻿@using TGH.Models
+@model List<ApplicationUser>
+@{
+    var cities = ViewData["Cities"] as List<City>;
+    var cityId = ViewData["CityId"] != null ? Convert.ToInt32(ViewData["CityId"].ToString()) : -1;
+}
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+<!-- Slider Start -->
+<div class="section slider-section-page">
+</div>
+<!-- Slider End -->
+<!-- All Courses Start -->
+<div class="section section-padding-02">
+    <div class="container">
+        <!-- All Courses Top Start -->
+        <div class="courses-top">
+            <!-- Section Title Start -->
+            <div class="section-title shape-01">
+                <h2 class="main-title">
+                    <span>
+                        @language.Getkey("TITLE_CHARITIES_1")
+                    </span> @language.Getkey("TITLE_CHARITIES_2")
+                </h2>
+            </div>
+            <!-- Section Title End -->
+        </div>
+        <!-- All Courses Top End -->
+        <div class="main-content-wrapper" dir="rtl">
+            <div>
+
+                <!-- Student Top Start -->
+                <div class="admin-top-bar students-top">
+                    <div class="courses-select">
+                        <select id="cityselect" onchange="FilterCity()">
+                            <option data-display="@language.Getkey("CHARITIES_ALL")"></option>
+                            @if (cityId == -1)
+                            {
+                                <option selected="selected" value="-1">@language.Getkey("CHARITIES_ALL")</option>
+                            }
+                            else
+                            {
+                                <option value="-1">@language.Getkey("CHARITIES_ALL")</option>
+                            }
+                            @foreach (City city in cities)
+                            {
+                                if (cityId == city.Id)
+                                {
+                                    if (language.Arabic)
+                                    {
+                                        <option selected="selected" value="@city.Id">@city.NameAR</option>
+                                    }
+                                    else
+                                    {
+                                        <option selected="selected" value="@city.Id">@city.NameEN</option>
+                                    }
+                                }
+                                else
+                                {
+                                    if (language.Arabic)
+                                    {
+                                        <option value="@city.Id">@city.NameAR</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@city.Id">@city.NameEN</option>
+                                    }
+                                }
+                            }
+                        </select>
+                        <h4 class="title">@language.Getkey("CHARITIES_ALL_DESCRIPTION")</h4>
+                    </div>
+
+                    <div class="student-box">
+                        <h5 class="title">@language.Getkey("CHARITIES_COUNT")</h5>
+                        <div class="count">@Model.Count</div>
+                    </div>
+                </div>
+                <!-- Student Top End -->
+                <!-- Student's Wrapper Start -->
+                <div class="students-wrapper students-active">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            @foreach (ApplicationUser user in Model)
+                            {
+                                <div class="swiper-slide">
+                                    <!-- Single Student Start -->
+                                    <div class="single-student">
+                                        <div class="student-images" style="margin-left:10px">
+                                            @if (user.Image != null)
+                                            {
+                                                <img src="data:image/jpeg;base64,@user.Image" alt="Author" />
+                                            }
+                                            else
+                                            {
+                                                <img src="~/maan/assets/images/man.svg" alt="Author" />
+                                            }
+                                        </div>
+                                        <div class="student-content">
+                                            <h5 class="name">@user.FullName</h5>
+                                            @if (language.Arabic)
+                                            {
+                                                <span class="country">@user.City?.NameAR</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="country">@user.City?.NameEN</span>
+                                            }
+                                            <p>@user.Description</p>
+                                        </div>
+                                    </div>
+                                    <!-- Single Student End -->
+                                </div>
+                            }
+                        </div>
+                        <div class="students-arrow">
+                            @if (Model != null && Model.Count > 2)
+                            {
+                                <!-- Add Pagination -->
+                                <div class="swiper-button-next"><i class="icofont-rounded-right"></i></div>
+                                <div class="swiper-button-prev"><i class="icofont-rounded-left"></i></div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Student's Wrapper End -->
+            </div>
+        </div>
+        <br><br> <br><br> <br><br>
+    </div>
+</div>
+<!-- All Courses End -->
+
+
+<script>
+
+    function FilterCity() {
+        var cityId = $("#cityselect").val();
+
+        if (cityId != '' && cityId != "-1" && cityId != '-1') {
+            window.location.href = '@Url.Action("Charities", "Home")?cityId=' + cityId;
+        }
+        else {
+            window.location.href = '@Url.Action("Charities", "Home")';
+        }
+    }
+</script>
